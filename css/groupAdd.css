@@ -1,0 +1,48 @@
+/*-------2015/12/15 by life--------*/
+/*-----con 2------*/
+/*-----con 3------*/
+.con-three{
+    min-height: 460px;
+}
+.c-middle{
+    margin-top: 40px;
+    margin-left: 10%;
+    height: auto;
+    width: 90%;
+}
+.cm-title{
+    height:auto;
+    margin-bottom: 15px;
+}
+.cm-title-lg{
+    font-size: 28px;
+    color: #6a6a6a;
+    font-weight: 700;
+}
+.cm-title-sm{
+    font-size: 16px;
+}
+.btnCopy{
+    display: inline-block;
+    margin-left: 20px;
+    cursor: pointer;
+    color: #009900;
+}
+.btnCopy:hover{
+    color:#116644;
+    text-decoration: underline;
+}
+.con-two label.error{
+    margin-left: 94px;
+}
+#platTips,#orgTips,#accTips{
+    display: none;
+}
+.div-inline .input-w-sm{
+    margin-right: 0;
+}
+.div-inline-line{
+    width: 2.46%;
+    text-align: center;
+    display: inline-block;
+}

@@ -1,0 +1,76 @@
+{
+    "code": "0",
+    "message": "操作成功",
+    "errors": null,
+    "data": [
+    {
+        "typeId": "2358e86e4b6d4c48a8ddd358820d10f0",
+        "name": "97号汽油",
+        "oilPrice": 5.03,
+        "createMan": null,
+        "createDatetime": 1451873570000
+    },
+    {
+        "typeId": "2896ede85896402b8b0af9b95566af88",
+        "name": "90油品",
+        "oilPrice": 6.03,
+        "createMan": null,
+        "createDatetime": 1451986867000
+    },
+    {
+        "typeId": "4140cc8576ff4593a12d6ce1cd2b8321",
+        "name": "test",
+        "oilPrice": 10.00,
+        "createMan": null,
+        "createDatetime": 1452155724000
+    },
+    {
+        "typeId": "6fd3eb9b8e7f45a5803402d2c798db09",
+        "name": "92号汽油",
+        "oilPrice": 6.03,
+        "createMan": null,
+        "createDatetime": 1451469304000
+    },
+    {
+        "typeId": "9ee25f22f24f4f3397d752459985e0cb",
+        "name": "97号油品",
+        "oilPrice": 12.00,
+        "createMan": "42bac5261154491a8c1562ed36094b85",
+        "createDatetime": 1451291772000
+    },
+    {
+        "typeId": "ce7cea15f5654b548b0fe6f507ba7f46",
+        "name": "95号油品",
+        "oilPrice": 10.00,
+        "createMan": null,
+        "createDatetime": 1452050829000
+    },
+    {
+        "typeId": "d1b8137e677c46c8a808a30af42d2e54",
+        "name": "93号油品",
+        "oilPrice": 6.00,
+        "createMan": null,
+        "createDatetime": 1452159023000
+    },
+    {
+        "typeId": "eac37928f1574070958b2d39a55e5c60",
+        "name": "柴油",
+        "oilPrice": 6.00,
+        "createMan": null,
+        "createDatetime": 1452159116000
+    },
+    {
+        "typeId": "ebaa8459d2eb4e6f974f8d94bbc46db2",
+        "name": "91号汽油",
+        "oilPrice": 5.94,
+        "createMan": null,
+        "createDatetime": 1451787475000
+    },
+    {
+        "typeId": "ee441df7864a4caa970104ed5c8a48c8",
+        "name": "000",
+        "oilPrice": 5.00,
+        "createMan": null,
+        "createDatetime": 1452159138000
+    }
+]}

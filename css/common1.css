@@ -1,0 +1,373 @@
+@charset "UTF-8";
+/*
+   1.公共样式
+   create by xianglongxiang on 2015/12/2
+/**/
+html, body {
+    height: 100%;
+}
+body {
+    font-family: "open sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background-color: #ffffff;
+    font-size: 13px;
+    color: #676a6c;
+    overflow-x: hidden;
+    background-color: #f8f8f8;
+}
+
+/* 渐变效果*/
+.animation{
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+}
+/*-----------对表格的样式的修改-----------*/
+table.dataTable thead .sorting:after {
+    content: "\f0dc";
+    float: right;
+    font-family: fontawesome;
+    color: rgba(50, 50, 50, 0.5);
+}
+.form-control{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width: 100%;
+}
+.dataTables_filter label{
+    width: 80%;
+    line-height: 50px;
+}
+tr.shown td.details-control{
+    background-image: url("../img/details_close.png");
+    background-repeat: no-repeat;
+}
+td.details-control{
+    background-image: url("../img/details_open.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+    width: 6%;
+    background-size: 10px 10px;
+
+}
+.span-label100 .menuContent{
+    margin-left: 0;
+}
+.menuContent{
+    margin-left: 0;
+    /*width: 70%;*/
+}
+.menuContent .ztree{
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+/*------------针对表格------------*/
+.table-bordered>thead>tr>td, .table-bordered>thead>tr>th{
+    border-bottom-width: 0;
+}
+/*------针对span按钮的--------*/
+.span-btn-all{
+    width: 100%;
+    padding: 0px 12px;
+}
+.span-btn-lg{
+    width: 25%;
+    margin-right: 14px;
+    padding: 0px 12px;
+}
+.span-btn{
+    display: inline-block;
+    background-color: #eee;
+    color: #666666;
+    height: 34px;
+    line-height: 34px;
+    border-radius: 6px;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+}
+.span-btn.span-active{
+    cursor: pointer;
+    color: #ffffff;
+    background-color: #1ab394;
+    border-color: #1ab394;
+}
+.span-btn-sm.span-active:hover{
+    background-color: #18a689;
+    border-color: #18a689;
+}
+.span-btn.span-warm{
+    color: #ffffff;
+    cursor: pointer;
+    background-color: #e28b41;
+}
+.span-btn-sm.span-warm:hover{
+    background-color: #aa5500;
+}
+.span-btn-sm{
+    width: 70px;
+    height: 34px;
+    line-height: 34px;
+    padding: 0px 8px;
+    text-align: center;
+    margin-right: 6px;
+}
+/*---------针对表单-------------*/
+.form-group{
+    margin-bottom: 5px;
+}
+label,.label{
+    font-weight: 100;
+    font-size: 13px;
+    min-width: 80px;
+    width: auto;
+    display: inline-table;
+    margin-left: 20px;
+}
+/*-------针对表单中的验证样式------*/
+label.error, .label.error,label.errorTip{
+    display: block;
+    margin-top: 5px;
+    margin-bottom: 0;
+    font-size: 12px;
+    color: #a94442;
+    margin-left: 94px;
+    padding-left: 4px;
+}
+label.errorTip{
+    display: none;
+}
+.fm-span-sm label.error{
+    width: 34%;
+}
+.div-btn-left{
+    font-weight: 100;
+    font-size: 13px;
+    width: 80px;
+    display: inline-table;
+    margin-left: 0px;
+}
+.span220{
+    min-width: 220px;
+    display: inline-block;
+}
+.span220 label{
+    margin-left: 5px;
+}
+.span110{
+    display: inline-block;
+    width: 110px;
+}
+.span90{
+    display: inline-block;
+    width: 90px;
+}
+.span110 .btn{
+    padding: 4px 8px;
+}
+.span220,.span110{
+    padding-left: 20px;
+}
+.select-w,input.form-control-sm{
+    display: inline-block;
+    width: 184px;
+}
+/*----针对时间input------*/
+.span645{
+    display: inline-block;
+    width: 645px;
+}
+.label100{
+    width: 90px;
+    display: inline-block;
+}
+input{
+    border: 1px solid #e5e6e7;
+}
+.form-control-sm, .single-line {
+    height: 30px;
+    line-height: normal;
+    background-color: #FFF;
+    background-image: none;
+    border: 1px solid  #C3C3C3;
+    border-radius: 1px;
+    color: inherit;
+    display: inline-block;
+    padding: 2px 6px;
+    -webkit-transition: border-color .15s ease-in-out 0s,box-shadow .15s ease-in-out 0s;
+    transition: border-color .15s ease-in-out 0s,box-shadow .15s ease-in-out 0s;
+    font-size: 13px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.form-control, .single-line {
+    background-color: #FFF;
+    background-image: none;
+    border: 1px solid #C3C3C3;
+    border-radius: 1px;
+    -webkit-border-radius: 1px;
+    -moz-border-radius: 1px;
+    color: inherit;
+    display: inline-block;
+    padding: 2px 6px;
+    -webkit-transition: border-color .15s ease-in-out 0s,box-shadow .15s ease-in-out 0s;
+    transition: border-color .15s ease-in-out 0s,box-shadow .15s ease-in-out 0s;
+     width: 100%;
+    font-size: 13px;
+    line-height: normal;
+}
+input,input:focus,.form-control, .form-control:focus,.form-control-sm:focus{
+    box-shadow: none;
+}
+.form-control:focus,.form-control-sm:focus,input:focus{
+    outline: medium;
+    border-color:#1ab394 ;
+}
+input[readonly],.form-control[readonly],input[disabled],.form-control[disabled]{
+    background-color: #FFF;
+}
+/*-----------针对button按钮样式设置---------------*/
+.btn-primary {
+    background-color: #1ab394;
+    border-color: #1ab394;
+    color: #FFF;
+}
+.btn-primary:hover,.btn-primaryS:focus{
+    background-color: #18a689;
+    border-color: #18a689;
+}
+.btn {
+    border-radius: 3px;
+}
+/*-------针对checkbox radio 自定义----------*/
+.checkbox, .radio {
+    position: relative;
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.checkbox label, .radio label {
+    min-height: 20px;
+    padding-left: 20px;
+    margin-bottom: 0;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.iradio_square-green {
+    background-position-x: -144px;
+}
+.iradio_square-green.checked {
+    background-position-x: -168px;
+}
+.icheckbox_square-green{
+    background-position-x: -22px;
+}
+.icheckbox_square-green.checked{
+    background-position-x: -46px;
+}
+.icheckbox_square-green, .iradio_square-green {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0;
+    padding: 0;
+    width: 22px;
+    height: 22px;
+    background-image: url("../img/green.png");
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+}
+/*---------针对分页的样式-------------*/
+.pagination>.active>a,
+.pagination>.active>a:focus,
+.pagination>.active>a:hover,
+.pagination>.active>span,
+.pagination>.active>span:focus,
+.pagination>.active>span:hover{
+    background-color: #e0e0e0;
+    border-color: #e0e0e0;
+}
+
+.form-control[readonly]{
+    background-color: #ffffff;
+}
+.select2-container{
+    margin-top: 5px !important;
+    margin-bottom: 5px !important;
+    text-align: left;
+}
+.select2-container .select2-selection--single{
+    height: 34px !important;
+}
+.select2-selection__rendered{
+    line-height: 34px !important;
+}
+.select2-container--default .select2-selection--single .select2-selection__arrow{
+    height: 32px !important;
+}
+.select2-container--default .select2-selection--single{
+    border: 1px solid #C3C3C3 !important;
+    border-radius: 1px !important;
+    -webkit-border-radius: 1px !important;
+    -moz-border-radius: 1px !important;
+}
+.select2-container--default:focus,.select2-container--default:hover, .select2-selection--single:focus,.select2-selection--single:hover{
+    outline: medium !important;
+    border-color:#1ab394  !important;
+}
+.org-div{
+    position: relative;
+}
+.form-group{
+    position: relative;
+}
+.star-Span{
+    position: absolute;
+    display: inline-block;
+    width: 5px;
+    height: 34px;
+    line-height: 34px;
+    text-align: center;
+    top: 8px;
+    color: red;
+    font-size: 20px;
+}
+
+*::-webkit-scrollbar
+{
+    width: 6px;
+    height: 6px;
+    background-color: #F5F5F5;
+}
+
+/*定义滚动条轨道 内阴影+圆角*/
+*::-webkit-scrollbar-track
+{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    border-radius: 3px;
+    background-color: #F5F5F5;
+}
+
+/*定义滑块 内阴影+圆角*/
+*::-webkit-scrollbar-thumb
+{
+    border-radius: 3px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    background-color: gray;
+}
+.tr.selected{
+    background: red;
+}
+.label-child-lg,.label-child-sm{
+    font-size: 12px;
+    margin-right:10px;
+    text-align: right;
+}
+.label-child-sm{
+    min-width:84px;
+}
+.label-child-lg{
+    min-width: 94px;
+}

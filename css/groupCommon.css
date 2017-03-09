@@ -1,0 +1,165 @@
+/*-------2015/12/15 by life--------*/
+.content-list,.cl-head,.content,.bottom-btn{
+    width: 100%;
+    height: auto;
+}
+.content-list{
+    background-color: #ffffff;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.head-title{
+    text-align: left;
+    font-size: 20px;
+    border-bottom: 1px solid #eee;
+    line-height: 55px;
+    height: 55px;
+    margin-bottom: 12px;
+}
+.cl-head{
+    margin-top: 12px;
+}
+
+/*---content start--------*/
+.content{
+    padding: 12px 16px;
+    background-color: #eee;
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+.con{
+    position: relative;
+    top:0px;
+    display: none;
+    width: 100%;
+    height: auto;
+}
+.con-show{
+    display: block;
+}
+/*=---con 1 start------*/
+@media (min-width: 992px) {
+    .txtCenter{
+        text-align: center;
+    }
+    .txtCenter .form-group{
+        text-align:left;
+    }
+}
+label.label-name{
+    width: 18%;
+    max-width: 94px;
+    text-align: left;
+    margin-left: 0px;
+}
+label.label-name-lg{
+    width: 20%;
+    max-width: 104px;
+    text-align: left;
+    margin-left: 0px;
+}
+
+.input-w-sm{
+    width: 34%;
+    display: inline-block;
+    margin-right: 3px;
+}
+select.input-w-sm{
+    margin-right: 0px;
+}
+.input-margin{
+    margin-left: 3%;
+}
+.input-w-xs {
+    width: 22%;
+    display: inline-block;
+}
+.input-w{
+    width: 72%;
+    display: inline-block;
+}
+.label-float{
+    float: left;
+}
+textarea.input-w{
+    width: 72%;
+    display: inline-block;
+    margin-left: 3px;
+}
+.input-float{
+    max-width: 72%;
+    float: left;
+}
+
+.label-margin,.div-margin{
+    margin-top: 12px;
+    margin-left: 4px;
+}
+.file-hidden{
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 12px;
+    min-height: 34px;
+}
+.file-hidden .star-Span{
+    margin-top: 6px;
+    left: 270px;
+}
+@media (max-width: 992px) {
+    .file-hidden .star-Span {
+        left: 270px;
+    }
+}
+.file-hidden input{
+    margin-left: -69px;
+    padding-top: 0px;
+}
+.file-hidden .span-btn{
+    height: 28px;
+    line-height: 28px;
+    padding: 2px 0px;
+}
+
+.file-hidden label.error{
+    margin-left: 0px;
+}
+.file-hidden .span-btn{
+    border-radius:0;
+    -moz-border-radius:0;
+    -webkit-border-radius:0;
+}
+.img-file{
+    width: 40%;
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+#myMap{
+    width: 100%;
+    height: 340px;
+}
+.bottom-btn{
+    padding-right: 30px;
+    text-align: right;
+    margin-bottom: 12px;
+}
+.margin-xs{
+    margin-right: 6px;
+}
+label.select2-error{
+    display: none;
+    margin-top: 5px;
+    margin-bottom: 0;
+    font-size: 12px;
+    color: #a94442;
+    margin-left: 18%;
+    padding-left: 4px;
+}
+.div-inline .input-w-sm{
+    margin-right: 0;
+}
+.div-inline-line{
+    width: 2.46%;
+    text-align: center;
+    display: inline-block;
+}
+

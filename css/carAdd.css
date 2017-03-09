@@ -1,0 +1,36 @@
+.org-group>label.label-name-lg{
+    float: left;
+    line-height: 34px;
+    height: 34px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.car-m-l label.error,.car-m-l label.errorTip{
+    margin-left: 104px;
+}
+.org-div{
+    position: relative;
+    display: inline-block;
+    width: 72%;
+    margin-left: 4px;
+}
+.org-div .menuContent{
+    top: 40px;
+    margin-left: 0;
+}
+.car-m-l label.select2-error{
+    margin-left: 104px;
+}
+.org-div input.input-w{
+    width: 100%;
+}
+.org-div label.error{
+    margin-left: 0;
+}
+.org-div .star-Span{
+    right:-4px;
+}
+#carNumTips{
+    display: none;
+}
+

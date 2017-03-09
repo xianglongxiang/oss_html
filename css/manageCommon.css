@@ -1,0 +1,132 @@
+.content-list,.c-middle,.search-con{
+    width: 100%;
+    height: auto;
+}
+.content-list{
+    background-color: #ffffff;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.span-dis{
+    display: inline-block;
+}
+.c-head,.c-middle,.search-con{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+/*-------针对管理界面中head部分的样式修改--------*/
+.c-head{
+    font-size: 20px;
+    margin-bottom: 12px;
+    height: 55px;
+    line-height: 55px;
+    border-bottom:1px solid #e3e3e3;
+}
+.ch-left{
+    width: 45%;
+    float: left;
+}
+.ch-name{
+    font-size: 20px;
+    color: #666666;
+}
+.ch-num{
+    font-size: 13px;
+    color: #337ab7;
+}
+.ch-right{
+    width: 50%;
+    font-size: 16px;
+    color: #000000;
+    text-align: right;
+    padding-right: 0px;
+    float:right;
+}
+.ch-btn{
+    margin-right: 10px;
+    cursor: pointer;
+}
+.ch-gray{
+    cursor: not-allowed;
+    margin-right: 10px;
+    color: #c4c4c4;
+}
+
+.ch-btn-line{
+    width: 2px;
+    height: 15px;
+    background-color: #666666;
+    margin-right: 5px;
+    display: inline-block;
+}
+.ch-right .form-group,
+.ch-right input {
+    margin-bottom: 0;
+}
+.ch-right input{
+
+}
+.ch-left.ch-left-sm{
+    width:30%;
+    white-space: nowrap;
+}
+.ch-right.ch-right-lg{
+    width:70%;
+    padding-right:10px;
+    white-space: nowrap;
+    margin-top:0;
+}
+@media (max-width: 1200px) {
+    .ch-right.ch-right-lg{
+        width: 100%;
+        text-align: center;
+    }
+}
+.ch-right-lg .label100{
+    margin-left:0px;
+    min-width:80px;
+}
+.ch-right-lg .span320{
+    min-width:300px;
+}
+
+
+.search-con{
+    min-height: 34px;
+}
+.btn-group{
+    width: 100%;
+}
+.search-w{
+    float: left;
+    width: 40%;
+    border-top-right-radius: 0px;
+    -moz-border-top-right-radius: 0px;
+    -webkit-border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    -webkit-border-bottom-right-radius: 0px;
+    -moz-border-bottom-right-radius: 0px;
+}
+.caret-margin{
+    margin-top: 5px;
+    margin-bottom:5px;
+}
+.span-type{
+    width: 80px;
+    height: 70%;
+    margin-top: 15%;
+    border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    text-align: center;
+    padding: 4px 10px;
+    color: #ffffff;
+    font-size: 12px;
+    white-space: nowrap;
+}
+.type-normal{
+    background-color:#00B83F;
+}
+.type-not{
+    background-color: #a94442;
+}

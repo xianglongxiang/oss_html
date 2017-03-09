@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="renderer" content="webkit">
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+    <!--<link href="css/plugins/alertify/alertify.default.css" rel="stylesheet">-->
+    <link href="../../css/plugins/alertify/alertify.core.css" rel="stylesheet">
+    <link href="../../css/plugins/alertify/alertify.bootstrap.css" rel="stylesheet">
+    <style type="text/css">
+        .row{margin: 0px}
+        pre{margin-top: 10px}
+    </style>
+</head>
+<body class="gray-bg">
+    <div id="wrapper">
+        <div  class="gray-bg dashbard-1" style="margin: 30px;">
+            <div class="wrapper wrapper-content animated fadeIn">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <p>alertify官网：<a href="http://sentsin.com/jquery/layer/" target="_blank">http://sentsin.com/jquery/layer/</a>
+                        </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                         <a href="javascript:;" class="btn btn-outline btn-default" onclick="message()">信息框</a>
+                        <pre style="text-align: left;">alertify.alert("Message");</pre>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <a href="javascript:;" class="btn btn-outline btn-default" onclick="confirm()">询问框</a>
+                            <pre style="text-align: left;">alertify.confirm("您要提交吗？", function () {
+                                // user clicked "ok"
+                                }, function() {
+                                // user clicked "cancel"
+                                });
+                            </pre>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <a href="javascript:;"  class="btn btn-outline btn-default" onclick="prompt()">对话</a>
+                            <pre style="text-align: left;">   alertify.okBtn("OK")
+                    .cancelBtn("cancel")
+                    .defaultValue("Default Value")
+                    .prompt("This is a prompt dialog",
+                    function (val, event) {
+
+                        // The click event is in the event variable, so you can use it here.
+                        event.preventDefault();
+
+                        // The value entered is availble in the val variable.
+                        alertify.success("You've clicked OK and typed: " + val);
+
+                    }, function(event) {
+
+                        // The click event is in the event variable, so you can use it here.
+                        event.preventDefault();
+
+                        alertify.error("You've clicked Cancel");
+                });
+        }
+                            </pre>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <a href="javascript:;" class="btn btn-outline btn-default" onclick="confirm1()">alert</a>
+                            <pre style="text-align: left;">alertify.confirm("Confirm?", function (event) {
+
+                // The click event is in the event variable, so you can use it here.
+                event.preventDefault();
+
+                alertify.alert("Successful AJAX after OK");
+
+
+            }, function(event) {
+
+                // The click event is in the event variable, so you can use it here.
+                event.preventDefault();
+
+                alertify.alert("Successful AJAX after Cancel");
+
+            });
+                            </pre>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <a href="javascript:;" class="btn btn-outline btn-default" onclick="confirm2()">log</a>
+                            <pre style="text-align: left;">alertify.log("Standard log message");
+                            </pre>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <a href="javascript:;" class="btn btn-outline btn-default" onclick="confirm3()">alert 图片</a>
+                            <pre style="text-align: left;"> alertify.log("&lt;img src='../../img/a7.jpg'&gt;&lt;h3&gt;This is HTML&lt;/h3&gt;&lt;p&gt;It's great, right?&lt;/p&gt;");
+                            </pre>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <a href="javascript:;" class="btn btn-outline btn-default" onclick="confirm5()">error</a>
+                            <pre style="text-align: left;"> alertify.error("Error log message");
+                            </pre>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <a href="javascript:;" class="btn btn-outline btn-default" onclick="confirm4()">success</a>
+                            <pre style="text-align: left;">alertify.success("Success log message");
+                            </pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </div>
+    <!-- Mainly scripts -->
+    <script src="../../js/plugins/jquery/jquery-2.1.1.min.js"></script>
+    <script src="../../js/plugins/bootstrap/bootstrap.min.js?v=3.4.0"></script>
+    <script src="../../js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+    <script src="../../js/plugins/alertify/alertify.js"></script>
+    <script type="text/javascript">
+        function message(){
+            alertify.alert("Message");
+        }
+        function confirm(){
+            alertify.confirm("您要提交吗？", function () {
+                // user clicked "ok"
+            }, function() {
+                // user clicked "cancel"
+            });
+        }
+        function prompt(){
+            alertify
+                    .okBtn("OK")
+                    .cancelBtn("cancel")
+                    .defaultValue("Default Value")
+                    .prompt("This is a prompt dialog",
+                    function (val, event) {
+
+                        // The click event is in the event variable, so you can use it here.
+                        event.preventDefault();
+
+                        // The value entered is availble in the val variable.
+                        alertify.success("You've clicked OK and typed: " + val);
+
+                    }, function(event) {
+
+                        // The click event is in the event variable, so you can use it here.
+                        event.preventDefault();
+
+                        alertify.error("You've clicked Cancel");
+                });
+        }
+        function confirm1(){
+            alertify.confirm("Confirm?", function (event) {
+
+                // The click event is in the event variable, so you can use it here.
+                event.preventDefault();
+
+                alertify.alert("Successful AJAX after OK");
+
+
+            }, function(event) {
+
+                // The click event is in the event variable, so you can use it here.
+                event.preventDefault();
+
+                alertify.alert("Successful AJAX after Cancel");
+
+            });
+        }
+        function confirm2(){
+             alertify.log("Standard log message");
+        }
+        function confirm3(){
+            alertify.log("<img src='../../img/a7.jpg'><h3>This is HTML</h3><p>It's great, right?</p>");
+        }
+        function confirm4(){
+            alertify.success("Success log message");
+        }
+        function confirm5(){
+            alertify.error("Error log message");
+        }
+    </script>
+</body>
+
+</html>

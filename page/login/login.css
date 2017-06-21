@@ -1,0 +1,258 @@
+@charset "UTF-8";
+/*============用户登录==========*/
+.header{
+    height:170px;
+    border-bottom:1px solid #b62022;
+    background:#fff;
+    margin-top:1px;
+}
+.header .header-top{
+    height:130px;
+    width:1200px;
+    margin:0 auto;
+    overflow: hidden;
+}
+.header-top .logo{
+    width:295px;
+    margin-top:24px;
+}
+.login-area{
+    /*width:1200px;*/
+    /*height:447px;*/
+    /*position: relative;*/
+    /*margin:0 auto;*/
+    width:1200px;  position: relative;
+    margin:50px auto;
+}
+.login-banner{
+    height:447px;
+}
+.login-banner .img-banner{
+    position:absolute; top:0; left:50%; margin-left:-960px;
+}
+.login-area .login-form{
+    position: absolute;
+    right:0;
+    height:345px;
+    background:#fff;
+    top:30px;
+    width: 350px;
+    -webkit-box-shadow:  2px 2px 4px #64010c;
+    -moz-box-shadow: 2px 2px 4px #64010c;
+    box-shadow:  2px 2px 4px #64010c;
+    border:1px solid #ffc1c9;
+    padding:45px 25px 0 25px;
+}
+.login-form .item-lab{
+    margin-bottom:15px;
+    position: relative;
+    width: 350px;
+}
+.login-form .item-lab .labs{
+    border:1px solid #cecece;
+    height:56px;
+    line-height:56px;
+    font-size:16px;
+    background:#f6f6f6;
+    padding:0 15px;
+
+}
+#loginMsg p.clearfix{
+    text-align: center;
+    padding-bottom:50px;
+}
+#loginMsg a.red-btn{
+    display:inline-block;
+    width:156px;
+}
+#loginMsg a.btn{
+    border: 1px solid #cecece;
+    color: #666;
+    background: #fff;
+    margin-left:10px;
+}
+.login-form .item-lab .labs input{
+    height:56px;
+    outline:0;
+    border:0;
+    vertical-align:top;
+    background:#f6f6f6;
+    margin-left:30px;
+    color:#999;
+    width:290px;
+
+}
+.login-form .item-lab .labs label{
+    width:20px;
+    position: absolute;
+    left: 15px;
+    top:0;
+    display:block;
+}
+.login-form .item-lab i{
+    font-size:20px;
+    color:#cecece;
+}
+.login-form .auth-code .labs{
+    width:180px;
+    float:left;
+}
+.login-form .imgAuthCode{
+    float:right;
+}
+
+.login-form .auth-code .labs input{
+    width:150px
+}
+.login-form .item-lab a.fl{
+    font-size:16px;
+}
+.login-form .item-lab a.fr{
+    font-size:16px;
+    color:#ff7800;
+}
+.login-page{
+    height:130px;
+    border:0;
+}
+.login-step{
+    margin:40px 0 0 0;
+}
+.login-step ul li{
+    float:left;
+    width:140px;
+}
+.login-step ul li p{
+    margin-left:77px;
+    padding-top:5px;
+}
+.login-step ul li.step-middle{
+    margin:0 60px;
+}
+
+.footer{
+    height:170px;
+    border-top:1px solid #e1e1e1;
+    background:#fff;
+    padding-top:70px;
+}
+.footer .wechat{
+    width:145px;
+    float:left;
+}
+.footer .about{
+    float: left;
+    padding-top:25px;
+}
+.about .hotline{
+    font-size:16px;
+    margin-bottom:10px;
+    color:#666;
+    padding-left:10px;
+}
+.hotline span{
+    font-size:30px;
+    color:#333;
+}
+.about p{
+    color:#999;
+}
+.about p a{
+    border-right:1px solid #999;
+    padding:0 10px;
+}
+.about p a:last-child{
+    border-right:0;
+}
+.about .copyright{
+    padding-left:10px;
+}
+.footer{
+    height:170px;
+    border-top:1px solid #e1e1e1;
+    background:#fff;
+    padding-top:70px;
+}
+.footer .wechat{
+    width:145px;
+    float:left;
+}
+.footer .about{
+    float: left;
+    padding-top:25px;
+}
+.about .hotline{
+    font-size:16px;
+    margin-bottom:10px;
+    color:#666;
+    padding-left:10px;
+}
+.hotline span{
+    font-size:30px;
+    color:#333;
+}
+.about p{
+    color:#999;
+}
+.about p a{
+    border-right:1px solid #999;
+    padding:0 10px;
+}
+.about p a:last-child{
+    border-right:0;
+}
+.about .copyright{
+    padding-left:10px;
+}
+.footer .legal{
+    width:512px;
+    overflow: hidden;
+    padding-top:80px;
+}
+.footer .legal ul{
+    width:602px;
+}
+.footer .legal li{
+    float: left;
+    margin-right:90px;
+}
+.w1200 {
+    width:1200px;
+    margin:0 auto;
+    position: relative;
+}
+.fl {
+    float: left;
+}
+.fr {
+    float: right;
+}
+.icon-safety{
+    background:url("./img/icon-safety.jpg");
+}
+.icon-fast{
+    background:url("./img/icon-fast.jpg");
+}
+.icon-spare{
+    background:url('./img/icon-spare.jpg');
+}
+.icon-safety,.icon-fast,.icon-spare{
+    width:57px;
+    height:57px;
+    float:left;
+}
+.red-btn{
+    height:56px;
+    line-height:56px;
+    background:#b00b0b;
+    display: block;
+    border:1px solid #cecece;
+    border-radius:3px;
+    color: #fff;
+    text-align:center;
+    font-size:20px;
+}
+.red-btn:hover {
+    color: #fff;
+}
+

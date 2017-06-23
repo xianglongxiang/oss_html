@@ -4,64 +4,60 @@
  */
 
 (function($,w){
-    $().ready(function(){
-      //  getAutho();
-        init();
-        scrollBar();
-        smoothlyMenu();
-        setSize();
-        $(".dropdown-toggle").dropdown('toggle');
-    });
     function init(){
         //定位当前选项卡
-        $(".J_tabShowActive").click(function(){
-            var left = $(".page-tabs .active").position().left;
-            if(left!=0){
-                $(".page-tabs-content").css({"margin-left":-left+"px"});
-            }
-        });
+        // $(".J_tabShowActive").click(function(){
+        //     var left = $(".page-tabs .active").position().left;
+        //     if(left!=0){
+        //         $(".page-tabs-content").css({"margin-left":-left+"px"});
+        //     }
+        // });
         //关闭所有选项卡
-        $(".J_tabCloseAll").click(function(){
-            $("iframe").not(":first").remove();
-            $("iframe:first").show();
-            $(".page-tabs-content a").not(":first").remove();
-            $(".page-tabs-content a:first").addClass("active");
-        });
+        // $(".J_tabCloseAll").click(function(){
+        //     $("iframe").not(":first").remove();
+        //     $("iframe:first").show();
+        //     $(".page-tabs-content a").not(":first").remove();
+        //     $(".page-tabs-content a:first").addClass("active");
+        // });
         //关闭其它选项卡
-        $(".J_tabCloseOther").click(function(){
-            var dataId = $(".page-tabs .active").attr("data-id");
-            var iframe =  $("iframe[src='"+dataId+"']");
-            $("iframe").not(":first").not(iframe).remove();
-            $(".page-tabs-content").find("a").not(":first").not(".active").remove();
-        });
+        // $(".J_tabCloseOther").click(function(){
+        //     var dataId = $(".page-tabs .active").attr("data-id");
+        //     var iframe =  $("iframe[src='"+dataId+"']");
+        //     $("iframe").not(":first").not(iframe).remove();
+        //     $(".page-tabs-content").find("a").not(":first").not(".active").remove();
+        // });
         //标题栏翻页
-        var tabs = new page(".content-tabs",".page-tabs-content",200);
-        $(".roll-left").unbind("click").bind("click",function(){ //向下翻页
-            tabs.nextTitle();
-        });
-        $(".roll-right").unbind("click").bind("click",function(){//向上翻页
-            tabs.prevTitle();
-        });
+        // var tabs = new page(".content-tabs",".page-tabs-content",200);
+        // $(".roll-left").unbind("click").bind("click",function(){ //向下翻页
+        //     tabs.nextTitle();
+        // });
+        // $(".roll-right").unbind("click").bind("click",function(){//向上翻页
+        //     tabs.prevTitle();
+        // });
         //打开页面
-        $("#side-menu a").unbind("click").bind("click",function(){
-            var url = $(this).attr("data-url");
-            var title = $(this).attr("data-title");
-            tabs.addPage("#content-main",url,title);
-        });
-        $("#side-menu>li>a").unbind("click").bind("click",function(){
-            var url = $(this).attr("data-url");
-            if(!url){
-                var that=$(this);
-                var liPa=that.parent("li");
-                if(liPa.hasClass("activeClass")){
-                    liPa.removeClass("activeClass");
-                }else{
-                    $(".activeClass").removeClass("activeClass");
-                    liPa.addClass("activeClass");
-                }
-            }
-        });
-        w.tabs = tabs;
+        // $("#side-menu a").unbind("click").bind("click",function(){
+        //     var url = $(this).attr("data-url");
+        //     var title = $(this).attr("data-title");
+        //     tabs.addPage("#content-main",url,title);
+        // });
+        // $("#side-menu>li>a").unbind("click").bind("click",function(){
+        //     var url = $(this).attr("data-url");
+        //     if(!url){
+        //         var that=$(this);
+        //         var liPa=that.parent("li");
+        //         if(liPa.hasClass("activeClass")){
+        //             liPa.removeClass("activeClass");
+        //         }else{
+        //             $(".activeClass").removeClass("activeClass");
+        //             liPa.addClass("activeClass");
+        //         }
+        //     }
+        // });
+        scrollBar();
+        // smoothlyMenu();
+        // setSize();
+        // $(".dropdown-toggle").dropdown('toggle');
+      //  w.tabs = tabs;
     }
     function getAutho() {
         $.ajax({
@@ -115,6 +111,7 @@
     }
     //滚动条
     function scrollBar(){
+        //滚动条
         $("#side-menu").slimscroll({
             size: "5px",
             height:function(){
@@ -151,4 +148,5 @@
             }
         });
     }
+    w.initMenu = init;
 })(jQuery,window)

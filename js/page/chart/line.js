@@ -4,7 +4,7 @@
 var myChart;
 option = {
     title: {
-        text: "客户趋势统计",
+        text: "7日销售量变化",
         x: "center"
     },
     legend: {
@@ -17,7 +17,7 @@ option = {
             type: "category",
             name: "时间",
             splitLine: {show: false},
-            data: ["一", "二", "三", "四", "五", "六", "七", "八", "九"]
+            data: ["2015/12/10", "二", "三", "四", "五", "六", "七", "八", "九"]
         }
     ],
     yAxis: [

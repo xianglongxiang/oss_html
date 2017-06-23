@@ -311,6 +311,9 @@ nav.page-tabs {
     color: #a7b1c2;
     font-weight: 600;
     font-family:"open sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    word-wrap: normal;
+    white-space: nowrap;
+    overflow: hidden;
 }
 .nav > li > a:hover,.nav > li > a:focus{
     color: #fff;

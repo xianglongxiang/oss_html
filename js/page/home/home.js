@@ -1,96 +1,50 @@
 /**
- * Created by xlx on 2016/1/9.
- * @description home.js
+ *
+ *  @auth xlx_good@qq.com
+ *  @date 17/6/21.
+ *
  */
-(function(w,$){
-    var tb;
-    var home = {
-        "init":function(){//初始化页面
-            $('.content').load(config.path+"js/page/home/html/c1.html",function(){//加载页面
-                home.main();
-            });
-            $(".content").delegate("#btnSearch","click",function(){//列表重加载
-                tb.ajax.reload();
-            });
-            //绑定警告信息的展示
-            $(".show-warning").click(function(){
-                $(".head-info").slideToggle("slow");
-            });
+
+requirejs.config({
+    baseUrl: '',
+    paths:  {
+        avalon: 'javascript/avalon.min',
+        jquery: 'js/plugins/jquery/jquery-2.1.1.min',
+        slimscroll: 'js/plugins/jquery/jquery.slimscroll',
+        bootstrap: 'js/plugins/bootstrap/bootstrap.min',
+        metisMenu: 'js/plugins/metisMenu/jquery.metisMenu',
+        page: 'js/common/page',
+        main: 'js/common/main',
+        navPage: 'nav-page',
+    },
+    shim: {
+        'slimscroll':{
+            deps: ['jquery']
         },
-        "main":function(){//业务逻辑操作
-            this.createTable();
-            this.createOilList();
-            this.createOrgThree();
+        'metisMenu':{
+            deps: ['jquery']
         },
-        "createTable":function(){
-            //定义列表绑定数据源
-            var columns = [
-                {data: 'plateNumber'},
-                {data: 'din'},
-                {data: 'orgName'},
-                {data: 'carModelName'},
-                {data: 'buyDate'}
-            ];
-            //查询参数，回调函数
-            var data = function(d){
-                //查询条件
-                d["plateNumber"] = $('#plateNumber').val();
-                d["orgId"] = $('#orgId').val();
-                d["engineNumber"] = $('#engineNumber').val();
-                d["vin"] = $('#vin').val();
-                d["oilId"] = $('#oilId').val();
-            }
-            //点击展开详细，回调函数
-            var format = function(tr){
-                var row = tr.data();
-                tr.child('<div class="label-detail"><p><label >车&nbsp;架&nbsp;号&nbsp;:</label><span>'+
-                    row.vin+'</span></p><p><label>发&nbsp;动&nbsp;机&nbsp;号:</label><span>'+
-                    row.engineNumber+'</span></p><p><label>登记证书号:</label><span>'+row.regist+
-                    '</span></p><p><label>油&nbsp;品&nbsp;名&nbsp;称:</label><span>'+
-                    (row.oilName==null?"--":row.oilName)+'</span></p></div>').show();
-            }
-            //table排序
-            var orderArr = [[3, 'asc'],[1, 'asc']];
-            //初始化列表
-            tb = SJTable.table.init("#grid",config.path+"js/page/home/data/tb.json", data, columns, {"orderArr":orderArr, "callback":format});
+        'page':{
+            deps: ['jquery']
         },
-        "createOrgThree":function(){
-            //机构树
-            $.ajax({
-                type:"POST",
-                url:config.path+'js/page/home/data/org.json',
-                dataType:"json",
-                success:function(resp){
-                    if(resp.code == "0"){
-                        //初始化机构树
-                        SJztree.ztree.init("orgName",null,resp.data,{"isChk":false,"hiddenId":"orgId"});
-                    }
-                }
-            });
+        'main':{
+            deps: ['jquery', 'page']
         },
-        "createOilList":function(){
-            //油品下拉列表
-            $.ajax({
-                type:"POST",
-                url:config.path+'js/page/home/data/oil.json',
-                dataType:"json",
-                success:function(resp){
-                    if(resp.code == "0"){
-                        //初始化下拉选项
-                        $('#oilId').append('<option value="">请选择油品名称</option>');
-                        var oils = resp.data;
-                        for(var i=0;i<oils.length;i++){
-                            var oil = oils[i];
-                            $('#oilId').append('<option value="'+oil.typeId+'">'+oil.name+'</option>');
-                        }
-                    }
-                }
-            });
-        }
-    };
-    $().ready(function(){
-        //dom加载完执行
+        'bootstrap': ['jquery']
+    }
+});
+
+
+(function(win, dom, requirejs, initVm){
+    var vm;
+    requirejs(['avalon', 'jquery', 'slimscroll', 'bootstrap', 'metisMenu', 'navPage'], function(){
+        //初始化vm
+        vm = initVm(dom);
     });
-    w.onload=home.init;//页面内容加载完
- //   w.home = home;//向外部开放
-})(window,jQuery)
+
+})(window, document, requirejs, function(dom){
+    var vm = avalon.define({
+        $id: 'container',
+    })
+    return vm;
+});

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="renderer" content="webkit">
+    <title></title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link rel="icon" type="image/x-icon" href="../../img/favicon.ico">
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="../../css/common1.css" rel="stylesheet">
+    <link href="../../css/home.css" rel="stylesheet">
+</head>
+<body class="gray-bg" :controller="container">
+<div class="tj-list">
+    <div class="tj-item" data-name="car">
+        <div class="tj-head">
+            <span class="fw-title">上线商品种数</span>
+        </div>
+        <div class="tj-con">
+            150款商品
+        </div>
+    </div>
+    <div class="tj-item" data-name="car">
+        <div class="tj-head">
+            <span class="fw-title">累计销售总量</span>
+        </div>
+        <div class="tj-con">
+            800000元
+        </div>
+    </div>
+    <div class="tj-item" data-name="car">
+        <div class="tj-head">
+            <span class="fw-title">订单未发数量</span>
+        </div>
+        <div class="tj-con">
+            0个
+        </div>
+    </div>
+</div>
+<div class="content">
+    <div class="tit bg-1 paddingLeft20">
+        近7日销售变化
+    </div>
+    <div class="content-left col-md-3 padding0" >
+        <table class="table table-striped table-bordered table-hover dataTables-example text-center dataTable no-footer" >
+            <thead>
+            <tr><td>时间</td> <td>销量(单位：元)</td></tr>
+            </thead>
+            <tbody>
+            <tr><td>2015-12-10</td><td>3000.00</td></tr>
+            <tr><td>2015-12-11</td><td>3000.00</td></tr>
+            <tr><td>2015-12-12</td><td>3000.00</td></tr>
+            <tr><td>2015-12-13</td><td>3000.00</td></tr>
+            <tr><td>2015-12-14</td><td>3000.00</td></tr>
+            <tr><td>2015-12-15</td><td>3000.00</td></tr>
+            <tr><td>2015-12-16</td><td>3000.00</td></tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="content-right col-md-9" id="line" style="height: 300px">
+
+    </div>
+</div>
+</body>
+<script data-main="home" src="../../javascript/require.js" ></script>
+</html>

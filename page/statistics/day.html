@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>日销售统计</title>
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="../../css/common1.css" rel="stylesheet">
+    <link href="../../css/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet">
+    <link href="../../js/plugins/DatePicker/skin/WdatePicker.css" rel="stylesheet">
+    <link href="../../lib/pagination/pagination.css" rel="stylesheet">
+</head>
+<body class="gray-bg" :controller="container">
+<div class="content content-border container-fluid">
+    <div id="centerform" class="content-head">
+        <div class="span220">
+            下单时间
+            <div class="start-date">
+                <input name="tempStarttime" id="tempStarttime" type="text"  class="validate[required]" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd',maxDate:'#F{$dp.$D(\'tempEndtime\')||$dp.$DV(\'%y-%M-%d\',{d:-1})}'});"/>
+            </div>
+            至
+            <div class="end-date">
+                <input name="tempEndtime" id="tempEndtime" type="text" class="validate[required]" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd',maxDate:'%y-%M-{%d-1}',minDate:'#F{$dp.$D(\'tempStarttime\')}'});"/>
+            </div>
+        </div>
+        <div class="span220">
+            搜索关键字：
+            <input  class="form-control-sm titleInput"  :duplex="form.keyword" placeholder="输入关键字" >
+        </div>
+        <div class="span110">
+            <div class="div-btn-left">
+                <input type="button" value="查询" :click="search" class="btn-search btn btn-primary">
+            </div>
+        </div>
+    </div>
+    <div class="content-title tit bg-1 paddingLeft20">
+        <span>商品列表</span>
+        <div class="span110">
+            <div class="div-btn-right">
+                <input type="button" value="导出"  class="btn btn-primary">
+            </div>
+        </div>
+    </div>
+    <table id="grid" class="table table-striped table-bordered table-hover dataTable text-center" style="width: 100%">
+        <thead>
+        <tr>
+            <th>序号</th>
+            <th>时间</th>
+            <th>销售金额</th>
+            <th>操作</th>
+        </tr>
+        </thead>
+        <tbody >
+        <tr>
+            <td>1</td>
+            <td>2017-04-02 15:58</td>
+            <td>30000.10</td>
+            <td>
+                <a>详情</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <div class="pagination"></div>
+</div>
+<script data-main="day" src="../../javascript/require.js" ></script>
+</body>
+</html>

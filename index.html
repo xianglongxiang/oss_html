@@ -13,7 +13,7 @@
     <link href="css/index.css" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="img/favicon.ico">
 </head>
-<body class="full-height-layout animation">
+<body class="full-height-layout animation" :controller="container" :class="[(miniMenu && 'mini-navbar')]">
 
 <!--顶部导航 start-->
 <nav class="navbar" role="navigation" style="margin-bottom: 0">
@@ -28,111 +28,85 @@
 </nav>
 <!--顶部导航 end-->
 
-
 <div id="wrapper" style="height: calc(100% - 52px)">
+
+    <!--左边栏 start-->
     <nav class="navbar-default navbar-static-side border-bottom animation" role="navigation">
         <div class="sidebar-collapse" style="height: 100%;overflow: auto">
             <ul class="nav " id="side-menu">
                 <li class="navbar-minimalize roll-nav roll-right">
-                    <i class="fa fa-bars"></i>
+                    <i class="fa fa-bars" :click="miniMenu=!miniMenu"></i>
                 </li>
-                <li class="active">
-                    <a href="javascript:void(0)" data-url="home.html" data-title="主页"><i class="fa fa-home"></i>
-                        <span class="nav-label">主页</span> <span class=""></span></a>
-                </li>
-                <li>
-                    <a href="javascript:void(0)"><i class="fa fa-table"></i>
-                        <span class="nav-label">表格</span> <span class="fa arrow"></span></a>
-                    <ul class="nav nav-second-level">
-                        <li>
-                            <a href="javascript:void(0)" data-url="page/table/ds.html" data-title="DataTable服务器">DataTable服务器处理</a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)" data-url="page/table/dl.html" data-title="DataTable本地">DataTable本地处理</a>
+
+                <li  :for="page in @pageList" :class="[(page.name==currentPage && 'active')]">
+                    <a href="javascript:void(0)"  :click="clickMenu(page)">
+                        <i class="fa" :class="[page.icon]"></i>
+                        <span class="nav-label">{{page.name}}</span>
+                        <span :if="page.subclass.length>0" class="fa arrow"></span>
+                    </a>
+
+                    <ul class="nav nav-second-level" :if="page.subclass.length>0" :visible="page.active">
+                        <li  :for="subPage in page.subclass" >
+                            <a href="javascript:void(0)" :click="clickMenu(subPage)">{{subPage.name}}</a>
                         </li>
                     </ul>
                 </li>
-                <li>
-                    <a href="javascript:void(0)"><i class="fa fa-bar-chart"></i>
-                        <span class="nav-label">图表</span> <span class="fa arrow"></span></a>
-                    <ul class="nav nav-second-level">
-                        <li>
-                            <a href="javascript:void(0)" data-url="page/chart/bar.html" data-title="柱状图&地图">柱状图&地图</a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)" data-url="page/chart/line.html" data-title="eChart折线图">折线图</a>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="javascript:void(0)"><i class="fa fa-desktop"></i>
-                        <span class="nav-label">页面</span> <span class="fa arrow"></span></a>
-                    <ul class="nav nav-second-level">
-                        <li>
-                            <a href="javascript:void(0)">
-                                <span class="nav-label">弹框</span> <span class="fa arrow"></span></a>
-                            <ul class="nav nav-third-level">
-                                <li>
-                                    <a href="javascript:void(0)" data-url="page/alert/alert1.html" data-title="简单弹框">简单弹框</a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)" data-url="page/alert/alertify2.html" data-title="alertify">alertify</a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)" data-url="page/alert/layer1.html" data-title="alertify">layer</a>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
+
             </ul>
         </div>
     </nav>
+    <!--左边栏 end-->
+
+    <!--右边内容 start-->
     <div id="page-wrapper" class="gray-bg animation">
+
+        <!--顶部导航 start-->
         <div class="row content-tabs">
-            <button class="roll-nav roll-left J_tabLeft"><i class="fa fa-backward"></i>
-            </button>
+            <button class="roll-nav roll-left J_tabLeft" :click="marginLeft(-4)"><i class="fa fa-backward"></i></button>
             <nav class="page-tabs J_menuTabs" id="navbar-title">
                 <div class="page-tabs-content" style="margin-left: 0px;">
-                    <a href="javascript:;" class="J_menuTab active" page-id="home.html">主页</a>
+                    <a href="javascript:;" class="J_menuTab" :for="page in openPageList" :class="[(page.name==showPage && 'active')]" :click="clickMenu(page)">
+                        <span>{{page.name}}</span>
+                        <i class="fa fa-times-circle" :visible="page.name!='主页'" :click="close(page) | stop"></i>
+                    </a>
                 </div>
             </nav>
-            <button class="roll-nav roll-right J_tabRight"><i class="fa fa-forward"></i>
-            </button>
+            <button class="roll-nav roll-right J_tabRight" :click="marginLeft(4)"><i class="fa fa-forward"></i></button>
             <div class="btn-group roll-nav roll-right">
                 <button class="dropdown J_tabClose" data-toggle="dropdown" aria-expanded="false">关闭操作<span
                         class="caret"></span>
 
                 </button>
                 <ul role="menu" id="dropdown" class="dropdown-menu dropdown-menu-right">
-                    <li class="J_tabShowActive"><a>定位当前选项卡</a>
+                    <li class="J_tabShowActive" :click="fixedPos"><a>定位当前选项卡</a>
                     </li>
                     <li class="divider"></li>
-                    <li class="J_tabCloseAll"><a>关闭全部选项卡</a>
+                    <li class="J_tabCloseAll" :click="closeAll"><a>关闭全部选项卡</a>
                     </li>
-                    <li class="J_tabCloseOther"><a>关闭其他选项卡</a>
+                    <li class="J_tabCloseOther" :click="closeOther"><a>关闭其他选项卡</a>
                     </li>
                 </ul>
             </div>
         </div>
-        <div class="row J_mainContent" id="content-main">
-            <iframe class="iframe0" src="home.html" style="width: 100%;height: 100%;border: 0">
+        <!--顶部导航 end-->
 
+        <!--内容页面 start-->
+        <div class="row J_mainContent" id="content-main">
+            <iframe :for="page in openPageList"  :attr="{src:page.url}" :visible="page.name==showPage" style="width: 100%;height: 100%;border: 0">
             </iframe>
         </div>
+        <!--内容页面 end-->
+
+        <!--loading-->
         <div class="loader"
              style=" width: 100%;height: 100%;display:none;position: absolute;top: 0;z-index: 10000;text-align: center;background: rgba(0,0,0,0.1);">
             <img style="margin-top: 28%" src="img/loaders/c_loader.gif">
         </div>
+        <!--loading-->
+
     </div>
+    <!--右边内容 end-->
 </div>
 <script data-main="index" src="./javascript/require.js" ></script>
-<!--<script src="js/plugins/jquery/jquery-2.1.1.min.js"></script>-->
-<!--<script src="js/plugins/jquery/jquery.slimscroll.js"></script>-->
-<!--<script src="js/plugins/bootstrap/bootstrap.min.js"></script>-->
-<!--<script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>-->
-<!--<script src="js/common/page.js"></script>-->
-<!--<script src="js/common/main.js"></script>-->
-<!--<script src="js/common/performance.js"></script>-->
 </body>
 </html>
